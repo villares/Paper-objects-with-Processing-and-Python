@@ -1,29 +1,5 @@
 CUT_STROKE = color(255, 0, 0)
 
-def test():
-    #size(600, 400, P3D)
-    p3D = [(50, 100, 0), (200, 100, 0), (200, 200, 0), (100, 300, -100)]
-    debug_text("ABCD", p3D)
-    beginShape()
-    for p in p3D:
-        vertex(*p)
-    endShape(CLOSE)
-    x0, y0, z0 = p3D[1]
-    x2, y2, z2 = p3D[3]
-    line(x0, y0, z0, x2, y2, z2)
-    println(dist(x0, y0, z0, x2, y2, z2))
-
-    p2D = [(250, 100), (250, 200)]
-    bx, by = p2D[0]
-    debug_text("BC", p2D)
-    for i in range(1):
-        p2D = unfold_tri_face(p2D, p3D)
-    println(p2D)
-    debug_text("AD", p2D)
-    dx, dy, _ = p2D[1]
-    println(dist(bx, by, dx, dy))
-
-
 def unfold_tri_face(pts_2D, pts_3D):
     """
     gets a collection of 2 (B, C) starting 2D points (PVectors or tuples)
@@ -44,7 +20,7 @@ def unfold_tri_face(pts_2D, pts_3D):
     # gets the 1st solution too!
     a2D = third_point(b2D, d2D, ab_len, ad_len)[0]
     line_draw(b2D, a2D, tab=True)
-    line_draw(d2D, a2D)
+    # line_draw(d2D, a2D)
     return (a2D, d2D)
 
 def third_point(a, b, ac_len, bc_len):
@@ -134,11 +110,14 @@ def debug_text(name, points, enum=False):
                     translate(10, 10, 10)
                     text(name[i], *p)
 
-def poly_draw(points, closed=True):
+def poly_draw(points, force_z=None, closed=True):
     """ sugar for face drawing """
     beginShape()
     for p in points:
-        vertex(*p)
+        if force_z is None:
+            vertex(*p)
+        else:
+            vertex(p[0], p[1], force_z)
     if closed:
         endShape(CLOSE)
     else:
@@ -155,3 +134,26 @@ def triangulated_face(*args):
     stroke(0)
     poly_draw((a, b, d))
     poly_draw((b, d, c))
+    
+def test():
+    #size(600, 400, P3D)
+    p3D = [(50, 100, 0), (200, 100, 0), (200, 200, 0), (100, 300, -100)]
+    debug_text("ABCD", p3D)
+    beginShape()
+    for p in p3D:
+        vertex(*p)
+    endShape(CLOSE)
+    x0, y0, z0 = p3D[1]
+    x2, y2, z2 = p3D[3]
+    line(x0, y0, z0, x2, y2, z2)
+    println(dist(x0, y0, z0, x2, y2, z2))
+
+    p2D = [(250, 100), (250, 200)]
+    bx, by = p2D[0]
+    debug_text("BC", p2D)
+    for i in range(1):
+        p2D = unfold_tri_face(p2D, p3D)
+    println(p2D)
+    debug_text("AD", p2D)
+    dx, dy, _ = p2D[1]
+    println(dist(bx, by, dx, dy))
