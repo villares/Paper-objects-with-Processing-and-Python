@@ -1,4 +1,4 @@
-CORTE, VINCO = color(255, 0, 0), color(0, 0, 255)
+CUT_STROKE, FOLD_STROKE = color(255, 0, 0), color(0, 0, 255)
 
 def setup():
     size(600, 600, P3D)
@@ -6,9 +6,9 @@ def setup():
 def draw():
     background(200)
     translate(300, 300)
-    caixa_desdobrada(250, 150, 100)
+    unfolded_box(250, 150, 100)
 
-def caixa_desdobrada(w, h, d):
+def unfolded_box(w, h, d):
         mw, mh, md =  w/2., h/2., d/2.
         face_2D(0, -h -md, w, d, "aaan")
         face_2D(0, -mh, w, h, "vvvv")
@@ -28,16 +28,16 @@ def face_2D(x, y, w, h, lados):
     my_line(+mw, +mh, -mw, +mh, l3)
     popMatrix()
          
-def my_line(x0, y0, x1, y1, tipo):
-    if tipo == "n":
+def my_line(x0, y0, x1, y1, variation):
+    if variation == "n":
         return
-    elif tipo == "c":
-        stroke(CORTE)
+    elif variation == "c":
+        stroke(CUT_STROKE)
     else:
-        stroke(VINCO)
+        stroke(FOLD_STROKE)
     line(x0, y0, x1, y1)
-    if tipo == "a":
-        stroke(CORTE)
+    if variation == "a":
+        stroke(CUT_STROKE)
         noFill()
         glue_tab((x0, y0), (x1, y1), 10)
         
