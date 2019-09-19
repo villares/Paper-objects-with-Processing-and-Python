@@ -18,6 +18,12 @@ Tou will need to [install Processing Python Mode](https://abav.lugaralgum.com/co
 
 ---
 
+![box_with_circular_holes](box_with_circular_holes/sketch_190918a.gif)
+
+[box_with_circular_holes](https://github.com/villares/Paper-objects-with-Processing-and-Python/tree/master/box_with_circular_holes)
+
+---
+
 ![paraboloid_box_v0](paraboloid_box_v0/paraboloid_box_v0.png)
 
 [paraboloid_box_v0](https://github.com/villares/Paper-objects-with-Processing-and-Python/tree/master/paraboloid_box_v0)
