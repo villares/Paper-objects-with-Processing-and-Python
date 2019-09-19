@@ -1,6 +1,8 @@
-# Paper-objects-with-Processing-and-Python
+# Paper objects with Processing and Python
 
 > Studies in digital fabrication
+
+Tou will need to [install Processing Python Mode](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/index-EN.html) to run these examples!
 
 ---
 
