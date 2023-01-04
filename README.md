@@ -40,6 +40,6 @@ This is work in progress to convert the materials to [py5](https://py5coding.org
 
 ---
 
-![unfold_pyramidal_solid](unfold_pyramidal_solid/sketch_190509a.gif)
+![unfold_pyramidal_solid](unfold_pyramidal_solid_py5/sketch_190509a.gif)
 
-[unfold_pyramidal_solid](unfold_pyramidal_solid/)
+[unfold_pyramidal_solid](unfold_pyramidal_solid_py5/)
