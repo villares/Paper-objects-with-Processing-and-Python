@@ -16,25 +16,25 @@ This is work in progress to convert the materials to [py5](https://py5coding.org
 
 ![box_with_rectangular_holes](box_with_rectangular_holes/sketch_190522a.gif)
 
-[box_with_rectangular_holes]
+[box_with_rectangular_holes](box_with_rectangular_holes/)
 
 ---
 
 ![box_with_circular_holes](box_with_circular_holes/sketch_190918a.gif)
 
-[box_with_circular_holes]
+[box_with_circular_holes](box_with_circular_holes/)
 
 ---
 
 ![paraboloid_box_v0](paraboloid_box_v0/paraboloid_box_v0.png)
 
-[paraboloid_box_v0]
+[paraboloid_box_v0](paraboloid_box_v0/)
 
 ---
 
 ![unfold_pyramid](unfold_pyramid/sketch_190502a.gif)
 
-[unfold_pyramid]
+[unfold_pyramid](unfold_pyramid/)
 
 -->
 
