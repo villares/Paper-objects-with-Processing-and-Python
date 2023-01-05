@@ -2,7 +2,7 @@
 
 > Studies in digital fabrication
 
-This is work in progress to convert the materials to [py5](https://py5coding.org). For the earlier [Processing Python Mode](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/index-EN.html) code, visit the "archive" branch: https://github.com/villares/Paper-objects-with-Processing-and-Python/tree/Processing-Python-mode
+<sub>This is work in progress to convert the materials to [py5](https://py5coding.org). For the earlier [Processing Python Mode](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/index-EN.html) code, visit the "archive" branch: https://github.com/villares/Paper-objects-with-Processing-and-Python/tree/Processing-Python-mode </sub>
 
 ---
 
