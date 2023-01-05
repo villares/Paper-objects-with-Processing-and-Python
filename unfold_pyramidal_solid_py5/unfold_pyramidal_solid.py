@@ -1,10 +1,10 @@
 """
-alexandre B A villares - https://abav.lugaralgum.com/
+Alexandre B A Aillares - https://abav.lugaralgum.com/
 
-unfolding prism or pyramideal solid
+Unfolding a prism or pyramideal solid
 
 https://github.com/villares/paper-objects-with-processing-and-python
-for py5 imported mode
+Now for py5 (py5coding.org) imported mode
 """
 
 from geometry import poly_draw, line_draw, unfold_tri_face, glue_tab
