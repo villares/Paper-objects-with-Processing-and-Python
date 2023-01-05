@@ -25,7 +25,7 @@ def draw():
         fill(255)
         stroke(0)
         f.draw_3D(-QUARTER_PI)
-        noFill()
+        no_fill()
         stroke(255, 0, 0)
         translate(200, 0)
         f.draw_2D()

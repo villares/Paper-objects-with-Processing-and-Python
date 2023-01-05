@@ -6,8 +6,12 @@ Box with rectangular holes
 
 from frame_box import frame_box, unfolded_frame_box
 
-dimensions = [250, 150, 100, 30]
+DIMENSION_KEYS = (('a', 'd'),
+                  ('w', 's'),
+                  (LEFT, RIGHT),
+                  (UP, DOWN))
 modes = [-1, 0, 1]  # click mouse to switch modes
+dimensions = [250, 150, 100, 30]  # initial dimensions, a list to be mutated
 
 def setup():
     size(600, 600, P3D)
@@ -36,12 +40,8 @@ def keyPressed():
     if key == ' ':
         dimensions[:] = [250, 150, 100, 30]
 
-    DIMENSION_KEYS = (('a', 'd', key),
-                      ('w', 's', key),
-                      (LEFT, RIGHT, keyCode),
-                      (UP, DOWN, keyCode))
-
-    for i, (plus, minus, k) in enumerate(DIMENSION_KEYS):
+    k = key_code if key == CODED else key
+    for i, (plus, minus) in enumerate(DIMENSION_KEYS):
         if k == plus:
             dimensions[i] += 1
         elif k == minus:
