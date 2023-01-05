@@ -23,26 +23,29 @@ def draw():
     if modes[0] >= 0:
         fill(255)
         stroke(0)
-        pushMatrix()
+        push_matrix()
         translate(0, 0, 200)
-        rotateX(HALF_PI / 2)
+        rotate_x(HALF_PI / 2)
         frame_box(w, h, d, thick)
-        popMatrix()
+        pop_matrix()
+
     if modes[0] <= 0:
         unfolded_frame_box(w, h, d, thick)
 
-def mousePressed():
+    if is_key_pressed:
+        k = key_code if key == CODED else key
+        for i, (plus, minus) in enumerate(DIMENSION_KEYS):
+            if k == plus:
+                dimensions[i] += 1
+            elif k == minus:
+                dimensions[i] -= 1
+
+def mouse_pressed():
     modes[:] = modes[1:] + [modes[0]]
 
-def keyPressed():
+def key_pressed():
     if key == 's':
-        saveFrame("a###.png")
+        save_frame("a###.png")
     if key == ' ':
         dimensions[:] = [250, 150, 100, 30]
 
-    k = key_code if key == CODED else key
-    for i, (plus, minus) in enumerate(DIMENSION_KEYS):
-        if k == plus:
-            dimensions[i] += 1
-        elif k == minus:
-            dimensions[i] -= 1

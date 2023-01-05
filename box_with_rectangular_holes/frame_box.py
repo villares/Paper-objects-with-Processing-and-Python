@@ -1,48 +1,52 @@
-CUT_STROKE, FOLD_STROKE = color(255, 0, 0), color(0, 0, 255)
+import py5
+
+CUT_STROKE, FOLD_STROKE = py5.color(255, 0, 0), py5.color(0, 0, 255)
 
 def frame_box(w, h, d, thick=0):
     """ draw the 3D version of the box with rectangular holes """
     mw, mh, md = w / 2., h / 2., d / 2.
-    translate(0, 0, -md)  # base
+    py5.translate(0, 0, -md)  # base
     face(0, 0, w, h, thick)
-    translate(0, 0, d)  # top
+    py5.translate(0, 0, d)  # top
     face(0, 0, w, h, thick)
-    translate(0, 0, -md)  # back to 0
-    rotateY(HALF_PI)
-    translate(0, 0, -mw)  # left side
+    py5.translate(0, 0, -md)  # back to 0
+    py5.rotate_y(py5.HALF_PI)
+    py5.translate(0, 0, -mw)  # left side
     face(0, 0, d, h, thick)
-    translate(0, 0, w)  # right side
+    py5.translate(0, 0, w)  # right side
     face(0, 0, d, h, thick)
-    translate(0, 0, -mw)  # back to middle
-    rotateY(-HALF_PI)  # back to 0 rotation
-    rotateX(HALF_PI)
-    translate(0, 0, -mh)  # lateral e
+    py5.translate(0, 0, -mw)  # back to middle
+    py5.rotate_y(-py5.HALF_PI)  # back to 0 rotation
+    py5.rotate_x(py5.HALF_PI)
+    py5.translate(0, 0, -mh)  # lateral e
     face(0, 0, w, d, thick)
-    translate(0, 0, h)  # lateral d
+    py5.translate(0, 0, h)  # lateral d
     face(0, 0, w, d, thick)
-    translate(0, 0, -mw)  # reset translate
-    rotateX(-HALF_PI)  # reset rotate
+    py5.translate(0, 0, -mw)  # reset translate
+    py5.rotate_x(-py5.HALF_PI)  # reset rotate
+
 
 def face(x, y, w, h, thick):
     mw, mh = w / 2., h / 2.
-    pushMatrix()
-    translate(x, y)
-    beginShape()
-    vertex(-mw, -mh)
-    vertex(+mw, -mh)
-    vertex(+mw, +mh)
-    vertex(-mw, +mh)
+    py5.push_matrix()
+    py5.translate(x, y)
+    py5.begin_shape()
+    py5.vertex(-mw, -mh)
+    py5.vertex(+mw, -mh)
+    py5.vertex(+mw, +mh)
+    py5.vertex(-mw, +mh)
     if thick > 0 and mw - thick > 0 and mh - thick > 0:
         mw -= thick
         mh -= thick
-        beginContour()  # counterclockwise hole
-        vertex(-mw, -mh)
-        vertex(-mw, +mh)
-        vertex(+mw, +mh)
-        vertex(+mw, -mh)
-        endContour()
-    endShape(CLOSE)
-    popMatrix()
+        py5.begin_contour()  # counterclockwise hole
+        py5.vertex(-mw, -mh)
+        py5.vertex(-mw, +mh)
+        py5.vertex(+mw, +mh)
+        py5.vertex(+mw, -mh)
+        py5.end_contour()
+    py5.end_shape(py5.CLOSE)
+    py5.pop_matrix()
+
 
 def unfolded_frame_box(w, h, d, thick=0, draw_main=True):
     mw, mh, md = w / 2., h / 2., d / 2.
@@ -53,11 +57,12 @@ def unfolded_frame_box(w, h, d, thick=0, draw_main=True):
     unfolded_face(-mw - md, -mh, d, h, "acna", thick, draw_main)
     unfolded_face(mw + md, -mh, d, h, "ncaa", thick, draw_main)
 
+
 def unfolded_face(x, y, w, h, edge_types, thick=0, draw_main=True):
     e0, e1, e2, e3 = edge_types
     mw, mh = w / 2., h / 2.
-    pushMatrix()
-    translate(x, y)
+    py5.push_matrix()
+    py5.translate(x, y)
     if draw_main:
         edge(-mw, +mh, -mw, -mh, e0)
         edge(-mw, -mh, +mw, -mh, e1)
@@ -65,48 +70,50 @@ def unfolded_face(x, y, w, h, edge_types, thick=0, draw_main=True):
         edge(+mw, +mh, -mw, +mh, e3)
     if thick > 0 and mw - thick > 0 and mh - thick > 0:
         unfolded_face(0, 0, w - thick * 2, h - thick * 2, "cccc")
-    popMatrix()
+    py5.pop_matrix()
+
 
 def edge(x0, y0, x1, y1, edge_type):
     if edge_type == "n":  # no edge is drawn
         return
     elif edge_type == "c":  # cut stroke selected
-        stroke(CUT_STROKE)
+        py5.stroke(CUT_STROKE)
     else:
-        stroke(FOLD_STROKE)  # fold stroke selected for "v" and "a"
-    line(x0, y0, x1, y1)    # line drawn here
+        py5.stroke(FOLD_STROKE)  # fold stroke selected for "v" and "a"
+    py5.line(x0, y0, x1, y1)    # line drawn here
     if edge_type == "a":    # tab (note a fold-stroke line was already drawn)
-        stroke(CUT_STROKE)
-        noFill()
+        py5.stroke(CUT_STROKE)
+        py5.no_fill()
         glue_tab((x0, y0), (x1, y1), 10)
 
-def glue_tab(p1, p2, tab_w, cut_ang=QUARTER_PI / 3):
+
+def glue_tab(p1, p2, tab_w, cut_ang=py5.QUARTER_PI / 3):
     """
     draws a trapezoidal or triangular glue tab along edge defined by p1 and p2,
     with width tab_w and cut angle a
     """
-    al = atan2(p1[0] - p2[0], p1[1] - p2[1])
-    a1 = al + cut_ang + PI
+    al = py5.atan2(p1[0] - p2[0], p1[1] - p2[1])
+    a1 = al + cut_ang + py5.PI
     a2 = al - cut_ang
     # calculate cut_len to get the right tab width
-    cut_len = tab_w / sin(cut_ang)
-    f1 = (p1[0] + cut_len * sin(a1),
-          p1[1] + cut_len * cos(a1))
-    f2 = (p2[0] + cut_len * sin(a2),
-          p2[1] + cut_len * cos(a2))
-    edge_len = dist(p1[0], p1[1], p2[0], p2[1])
+    cut_len = tab_w / py5.sin(cut_ang)
+    f1 = (p1[0] + cut_len * py5.sin(a1),
+          p1[1] + cut_len * py5.cos(a1))
+    f2 = (p2[0] + cut_len * py5.sin(a2),
+          p2[1] + cut_len * py5.cos(a2))
+    edge_len = py5.dist(p1[0], p1[1], p2[0], p2[1])
 
-    if edge_len > 2 * cut_len * cos(cut_ang):    # 'normal' trapezoidal tab
-        beginShape()
-        vertex(*p1)    # vertex(p1[0], p1[1])
-        vertex(*f1)
-        vertex(*f2)
-        vertex(*p2)
-        endShape()
+    if edge_len > 2 * cut_len * py5.cos(cut_ang):    # 'normal' trapezoidal tab
+        py5.begin_shape()
+        py5.vertex(*p1)    # vertex(p1[0], p1[1])
+        py5.vertex(*f1)
+        py5.vertex(*f2)
+        py5.vertex(*p2)
+        py5.end_shape()
     else:    # short triangular tab
         fm = ((f1[0] + f2[0]) / 2, (f1[1] + f2[1]) / 2)
-        beginShape()
-        vertex(*p1)
-        vertex(*fm)    # middle way of f1 and f2
-        vertex(*p2)
-        endShape()
+        py5.begin_shape()
+        py5.vertex(*p1)
+        py5.vertex(*fm)    # middle way of f1 and f2
+        py5.vertex(*p2)
+        py5.end_shape()
