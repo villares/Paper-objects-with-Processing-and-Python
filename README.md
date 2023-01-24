@@ -4,7 +4,7 @@
 
 > Studies in digital fabrication
 
-<sub>For the earlier [Processing Python Mode](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/index-EN.html) version of this project, visit the "archived" branch: https://github.com/villares/Paper-objects-with-Processing-and-Python/tree/Processing-Python-mode</sub>
+<sub>For the earlier [Processing Python Mode](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/index-EN.html) version of this project, visit the ["archived branch"](https://github.com/villares/Paper-objects-with-Processing-and-Python/tree/Processing-Python-mode).</sub>
 
 ## Simple 2D unfolded box
 
