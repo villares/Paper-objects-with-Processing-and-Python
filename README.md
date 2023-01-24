@@ -2,7 +2,7 @@
 
 ##### TOC
 
-> Studies in digital fabrication [from this GitHub repository](ttps://github.com/villares/Paper-objects-with-Processing-and-Python/).
+> Studies in digital fabrication [from this GitHub repository](https://github.com/villares/Paper-objects-with-Processing-and-Python/).
 > For the earlier [Processing Python Mode](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/index-EN.html) version of this project, visit the ["archived branch"](https://github.com/villares/Paper-objects-with-Processing-and-Python/tree/Processing-Python-mode).
 
 ## Simple 2D unfolded box
