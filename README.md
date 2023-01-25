@@ -1,9 +1,10 @@
 # Paper objects with Processing and Python
 
-##### TOC
+<h1 id="toc"></h1>
 
-> Studies in digital fabrication [from this GitHub repository](https://github.com/villares/Paper-objects-with-Processing-and-Python/) using the [py5](https://py5coding.org) library that combines the Processing drawing infrastructure with modern Python. More about [installing py5 and using the imported mode style](https://abav.lugaralgum.com/como-instalar-py5/index-EN.html).
-> For the earlier [Processing Python Mode](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/index-EN.html) version of this project, visit the ["archived branch"](https://github.com/villares/Paper-objects-with-Processing-and-Python/tree/Processing-Python-mode).
+Studies in digital fabrication [from this GitHub repository](https://github.com/villares/Paper-objects-with-Processing-and-Python/) using the [py5](https://py5coding.org) library that combines the Processing drawing infrastructure with modern Python. More about [installing py5 and using the imported mode style](https://abav.lugaralgum.com/como-instalar-py5/index-EN.html).
+
+For the earlier [Processing Python Mode](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/index-EN.html) version of this project, visit the ["archived branch"](https://github.com/villares/Paper-objects-with-Processing-and-Python/tree/Processing-Python-mode).
 
 ## Simple 2D unfolded box
 
