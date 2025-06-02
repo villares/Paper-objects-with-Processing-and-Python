@@ -23,7 +23,7 @@ For the earlier [Processing Python Mode](https://abav.lugaralgum.com/como-instal
 
 ## Box with cricular holes
 
-![box_with_circular_holes](box_with_circular_holes/sketch_190918a.gif)
+![box_with_circular_holes](/box_with_circular_holes/sketch_190918a.gif)
 
 [Code for Box with circular holes](https://github.com/villares/Paper-objects-with-Processing-and-Python/tree/main/box_with_circular_holes/) 
 
