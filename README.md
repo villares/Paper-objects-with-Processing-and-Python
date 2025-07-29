@@ -4,12 +4,14 @@
 
 Studies in digital fabrication [from this GitHub repository](https://github.com/villares/Paper-objects-with-Processing-and-Python/) using the [py5](https://py5coding.org) library that combines the Processing drawing infrastructure with modern Python. More about [installing py5 and using the imported mode style](https://abav.lugaralgum.com/como-instalar-py5/index-EN.html).
 
-For the earlier [Processing Python Mode](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/index-EN.html) version of this project, visit the ["archived branch"](https://github.com/villares/Paper-objects-with-Processing-and-Python/tree/Processing-Python-mode).
+For the earlier *Processing Python Mode* version of this project, visit the ["archived branch"](https://github.com/villares/Paper-objects-with-Processing-and-Python/tree/Processing-Python-mode).
 
 <!--
 ![imagem para o sumário do material-aulas](assets/thumb-paper.gif)
 -->
 
+If you like this, support my work with a small donation!
+[Here](https://www.paypal.com/donate/?hosted_button_id=5B4MZ78C9J724), with [Wise](https://wise.com/pay/me/alexandrev562) or at [LiberaPay](https://liberapay.com/Villares).
 
 ## Simple 2D unfolded box
 
